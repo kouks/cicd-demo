@@ -1,0 +1,33 @@
+{
+  "name": "cicd",
+  "version": "1.0.0",
+  "description": "CICD Test",
+  "main": "src/main.js",
+  "scripts": {
+    "watch": "node build/dev.js",
+    "build": "node build/prod.js",
+    "test": "mocha-webpack --webpack-config webpack.config.js --recursive test/**/*.spec.js --require test/setup",
+    "prod": "npm run test && npm run build"
+  },
+  "author": "Pavel Koch <kouks.koch@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "chai": "^4.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "mocha": "^4.0.1",
+    "mocha-webpack": "^1.0.1",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.1"
+  }
+}
