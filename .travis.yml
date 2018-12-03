@@ -1,24 +1,23 @@
 language: node_js
-node_js:
-  - "10"
 
+node_js:
+- '10'
 install:
-  - npm i
+- npm i
 
 script:
-  - npm run build
-  - npm run test
+- npm run build
+- npm run test
 
 deploy:
-  - provider: s3
-    skip_cleanup: true
-    access_key_id: AKIAJARDOMZDSZO4VQDQ
-    secret_access_key:
-      secure: q6Q7aGufUZKWNYb9ekNrlQLBlXO0cNwiLfIiuEEZLA95jPTyhJcsaJiEMFKGCOBgciHYsUQP6TXjK85GKkRq1rtdOLu+HDFi2QGMsczW08CR3T9LCYI1u5w+onYiUJTLTtsag6UKIMA+sVbtgNhZy4ZO+CCSG/qkjUWpu8/0An60z8NgMmh0STuQanLMnhaHcxHUND8ttlISy6kYGPDMuNdlrsh7SYMYHi0+WfSRFQSxmtBWnOWYRJPOTu1SAbm1xZ6fp0FNA2ibG/PP9L2gJYA5YeeH+NsrEV4beZlXqKzqtXMVfinNdYp3Uw7EmJJdRzilqgJ6RRXvzY45GP1stT1KBMJjZVOFyTYIltR9mShZ/6o2XlUnDCOExUUOVJ+pRKQL9wxoWha3gUUrjJ1TTRAshBRDx66hZJRkZWl6nSwztLr0UarwpPnNsZGDu8xMT1PdZymuWKNeZPN9gjwiWh5j18+1ANBf0tq0Ilq8d98UHYYcQqf72bqRk3HVb6f5GbzM23ELiF95clLZsODzq8bxANZnXgNbvLIbEHHJJB6gMmxhSiD7MzkytoJi+cn4PH66vtKxK8SGsjpYSJATjnJFOQV2T/7EClSZtzzvhZ5suZNvNk/Th989IdCtiBm7KJugPDTLsiXmgE8ldwguxAqrNCeda1dJ3hClhR+tJJI=
-    bucket: cicd-demo-opensource
-    local-dir: dist
-    acl: public_read
-    region: eu-west-2
-    on:
-      repo: kouks/cicd-demo
-      branch: master
+  provider: s3
+  skip_cleanup: true
+  access_key_id: AKIAJARDOMZDSZO4VQDQ
+  secret_access_key:
+    secure: cFP6zopvAkKZvODf2uSHEGN83M5OHJIj8Yy3ThgYqdOm9KxYI8NJ32gAnafcUUY0sMl0jB2XYVlittkF5nBmBqpPZnYlMIRxG23DNytECoaVyaYlIbFhw19fOvHVHyaXqlclJkacs/ueFdzvNo0GBKsuoL8R8yarJv+nc0OLVKq0TITh2SgyaPTdFJyWUOcMMK5YVyycDYc9oVvZjQInlc4CFMoDA5YbBKM4EX8D9O53mrOh2s4c74PTWJnzm0XbFFfcbKcXrxcNi6X0GxujUz31UvYALr/8c3rprQleI55dhhzUf6BIyMXUbR0SJEmcQEJnYBr97XZcddHIySnu4lb01QFOCTOgPmbgj1Xg+TNi0QRcFouuThNMpFcVsT9hnnfRmyFp2f41lkN4bVYQre5UGEiN5Csn/+kPnyKU+T2ClsynOZkYF1R2TpCKDCGHSL3x+taPsY6o0goJVI1lRLEZSDUn/aDWb/uR0yQSMK/EKNUFrRuXsBZ/AWUWgXLn2Haf66tK6I7Ar3pCiti1Y2oI7aBhqjbQIWZU7OyRzN8mT7AYzHehwW2FprbFozcY2TiHcMwaNdYZUTBc0XzWo6Mdn04tt0KUBjP5VZ27usPCFT9JVZ2bH7XJvwmn7ShTvkxgtJlS3onrZfmGkNSkPs39WiG8N/6e4SzEWBPzJ40=
+  bucket: cicd-demo-opensource
+  acl: public_read
+  region: eu-west-2
+  on:
+    repo: kouks/cicd-demo
+    branch: master
