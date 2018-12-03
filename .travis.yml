@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "10"
+
+install:
+  - npm i
+
+script:
+  - npm run build
+  - npm run test
+
+deploy:
+  - provider: s3
+    skip_cleanup: true
+    access_key_id: AKIAJARDOMZDSZO4VQDQ
+    secret_access_key:
+      secure: q6Q7aGufUZKWNYb9ekNrlQLBlXO0cNwiLfIiuEEZLA95jPTyhJcsaJiEMFKGCOBgciHYsUQP6TXjK85GKkRq1rtdOLu+HDFi2QGMsczW08CR3T9LCYI1u5w+onYiUJTLTtsag6UKIMA+sVbtgNhZy4ZO+CCSG/qkjUWpu8/0An60z8NgMmh0STuQanLMnhaHcxHUND8ttlISy6kYGPDMuNdlrsh7SYMYHi0+WfSRFQSxmtBWnOWYRJPOTu1SAbm1xZ6fp0FNA2ibG/PP9L2gJYA5YeeH+NsrEV4beZlXqKzqtXMVfinNdYp3Uw7EmJJdRzilqgJ6RRXvzY45GP1stT1KBMJjZVOFyTYIltR9mShZ/6o2XlUnDCOExUUOVJ+pRKQL9wxoWha3gUUrjJ1TTRAshBRDx66hZJRkZWl6nSwztLr0UarwpPnNsZGDu8xMT1PdZymuWKNeZPN9gjwiWh5j18+1ANBf0tq0Ilq8d98UHYYcQqf72bqRk3HVb6f5GbzM23ELiF95clLZsODzq8bxANZnXgNbvLIbEHHJJB6gMmxhSiD7MzkytoJi+cn4PH66vtKxK8SGsjpYSJATjnJFOQV2T/7EClSZtzzvhZ5suZNvNk/Th989IdCtiBm7KJugPDTLsiXmgE8ldwguxAqrNCeda1dJ3hClhR+tJJI=
+    bucket: cicd-demo-opensource
+    local-dir: dist
+    acl: public_read
+    region: eu-west-2
+    on:
+      repo: kouks/cicd-demo
+      branch: master
